@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AppVant 신제품개발계획서</title>
+<title>AppVant 신규 서비스 개발 계획서</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -637,9 +637,14 @@
 <section class="cover">
   <div class="logo">AV</div>
   <div class="cover-brand">AppVant</div>
-  <h1 class="cover-title">신제품개발계획서</h1>
+  <h1 class="cover-title">신규 서비스 개발 계획서</h1>
   <p class="cover-subtitle">AppVant — 앱 인텔리전스 플랫폼</p>
-  <p class="cover-date">2026년 4월 15일</p>
+  <div style="margin-top:48px;position:relative;z-index:1">
+    <div style="display:inline-block;padding:16px 32px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:12px">
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px">Ontology Design Lab</div>
+      <div style="font-size:18px;font-weight:700;color:var(--text)">Hennah</div>
+    </div>
+  </div>
   <div class="cover-scroll">
     <span>SCROLL</span>
     <div class="arrow"></div>
@@ -655,15 +660,25 @@
     <h2 class="section-title">배경</h2>
   </div>
   <div class="card">
-    <p>MobileIndex는 국내 앱 시장 데이터(DAU, 다운로드, 점유율 등)를 제공하지만, 고객은 여전히 <strong>"그래서 우리 앱이 어떤 상태이고, 뭘 해야 하는지"</strong>를 스스로 판단해야 합니다.</p>
+    <h3>왜 리뷰와 평점인가</h3>
+    <p>앱스토어 평점은 단순한 숫자가 아닙니다. <strong>다운로드 전환율, 스토어 노출 순위, 광고 효율</strong>에 직접 영향을 미치는 비즈니스 지표입니다.</p>
     <ul>
-      <li>리뷰 데이터는 앱스토어/구글플레이에서 따로 확인</li>
-      <li>경쟁사 비교는 수동으로 엑셀 정리</li>
-      <li>DAU 변동과 리뷰 이슈의 연관성은 아무도 연결해주지 않음</li>
+      <li>평점 0.5점 차이로 다운로드 전환율이 <strong>최대 2배</strong> 차이남 (Apptentive 조사)</li>
+      <li>사용자의 79%가 앱 설치 전 리뷰를 확인 — 리뷰가 곧 <strong>첫인상</strong></li>
+      <li>부정 리뷰 1건은 긍정 리뷰 5~7건의 효과를 상쇄 — <strong>방치 비용이 큼</strong></li>
+      <li>리뷰에는 사용자가 직접 말하는 <strong>개선 포인트</strong>가 담겨있음 — 가장 저렴한 사용자 리서치</li>
     </ul>
-    <div class="highlight-big">
-      데이터는 있지만 인사이트가 없는 상태.<br>
-      이 갭을 메우는 제품이 <strong style="color:var(--accent-light)">AppVant</strong>입니다.
+    <p>그런데 대부분의 앱 운영팀은 리뷰를 <strong>체계적으로 분석하지 못합니다.</strong> 수백~수천 건의 리뷰를 읽고, 패턴을 찾고, 우선순위를 매기는 건 사람이 하기엔 너무 느립니다.</p>
+
+    <h3>MobileIndex 데이터의 미완성 퍼즐</h3>
+    <p>MobileIndex는 DAU, 다운로드, 점유율 등 <strong>시장 데이터</strong>를 제공합니다. 하지만 고객이 실제로 알고 싶은 건:</p>
+    <ul>
+      <li>"DAU가 떨어졌는데 <strong>왜?</strong>" → MI는 숫자만 보여주고, 원인은 리뷰에 있음</li>
+      <li>"경쟁사보다 평점이 낮은데 <strong>뭘 고쳐야?</strong>" → MI에는 리뷰 분석이 없음</li>
+      <li>"우리 앱이 시장에서 <strong>어떤 위치?</strong>" → DAU와 평점을 결합한 포지셔닝이 없음</li>
+    </ul>
+    <div class="highlight">
+      MI의 <strong>시장 데이터</strong> + 앱스토어의 <strong>리뷰 데이터</strong>를 연결하면, 숫자 뒤에 숨은 <strong>"왜"와 "어떻게"</strong>를 알 수 있습니다.
     </div>
   </div>
 </section>
@@ -675,35 +690,28 @@
     <h2 class="section-title">서비스 정의</h2>
   </div>
   <div class="card">
+    <h3>AppVant = App + Vantage</h3>
+    <p><strong>Vantage</strong>(유리한 고지, 전략적 시야). 프랑스어 <em>avant</em> = "앞서다". 앱 시장에서 <strong>한발 앞서 내려다보는 관점</strong>을 제공합니다.</p>
+    
     <div class="highlight">
-      <strong>AppVant</strong> = MobileIndex 데이터 위에 올리는 <strong>인텔리전스 레이어</strong>
+      MobileIndex 데이터 위에 올리는 <strong>인텔리전스 레이어</strong><br>
+      리뷰·DAU·경쟁사 포지션을 하나로 연결해 <strong>"그래서 뭘 해야 하는지"</strong>까지 알려주는 서비스
     </div>
-    <p>앱을 검색하면 <strong>30초 안에</strong>:</p>
-    <div class="service-features">
-      <div class="service-feature">
-        <div class="sf-icon">🎯</div>
-        <div class="sf-text">경쟁사 대비 <strong>내 앱의 시장 포지션</strong> 진단 (4분면 맵)</div>
-      </div>
-      <div class="service-feature">
-        <div class="sf-icon">🧭</div>
-        <div class="sf-text"><strong>"다음에 뭘 해야 하는지"</strong> 전략 가이드 제시</div>
-      </div>
-      <div class="service-feature">
-        <div class="sf-icon">⚠️</div>
-        <div class="sf-text">리뷰에서 <strong>평점을 깎는 이슈</strong> 자동 추출 + 해결 시 예상 효과 정량화</div>
-      </div>
-      <div class="service-feature">
-        <div class="sf-icon">📈</div>
-        <div class="sf-text">DAU/다운로드/평점 <strong>트렌드 이상 징후</strong> 자동 탐지</div>
-      </div>
-      <div class="service-feature">
-        <div class="sf-icon">📤</div>
-        <div class="sf-text">분석 결과를 <strong>슬랙/이메일로 자동 발송</strong> (주간 리포트)</div>
-      </div>
+
+    <h3>기존 도구와의 차이</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>MobileIndex</th><th>리뷰 분석 도구</th><th style="color:var(--accent-light)">AppVant</th></tr></thead>
+        <tbody>
+          <tr><td><strong>DAU/다운로드</strong></td><td>✅</td><td>❌</td><td>✅</td></tr>
+          <tr><td><strong>리뷰 분류/분석</strong></td><td>❌</td><td>✅</td><td>✅</td></tr>
+          <tr><td><strong>경쟁사 포지셔닝</strong></td><td>△ 수동</td><td>❌</td><td>✅ 자동</td></tr>
+          <tr><td><strong>"뭘 해야 하는지" 제시</strong></td><td>❌</td><td>❌</td><td style="color:var(--accent-light)"><strong>✅ 전략 가이드</strong></td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="highlight">
-      핵심 차별점: 단순 데이터 조회가 아니라 <strong>"포지션 → 이슈 → 액션"의 흐름</strong>을 만들어줌
-    </div>
+
+    <p>기존 도구들은 "지금 어디에 있는지"만 보여줍니다. AppVant는 <strong>"어디로 가야 하고, 첫 번째 액션이 뭔지"</strong>까지 알려줍니다. 포지션 맵이 목적지가 되고, 리뷰 분석이 이동 수단이 됩니다.</p>
   </div>
 </section>
 
@@ -715,37 +723,27 @@
   </div>
   <div class="card">
     <h3>기존 MI 고객 <span style="color:var(--accent-light);font-size:14px;font-weight:500;margin-left:8px;">즉시 전환 가능</span></h3>
+    <p>이미 MI를 쓰고 있지만 <strong>"데이터를 봐도 결론을 못 내리는"</strong> 고객. AppVant가 그 마지막 1마일을 채워줍니다.</p>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>대상</th><th>현재 행동</th><th>AppVant가 주는 가치</th></tr>
-        </thead>
+        <thead><tr><th>대상</th><th>현재 페인포인트</th><th>AppVant 가치</th></tr></thead>
         <tbody>
-          <tr>
-            <td><strong>앱 광고주</strong><br><span style="font-size:12px;color:var(--text-muted)">게임사, 커머스, 핀테크 등</span></td>
-            <td>MI에서 DAU/순위 확인 후 자체 분석</td>
-            <td>경쟁사 포지셔닝 + 리뷰 이슈 → 액션까지 원스톱</td>
-          </tr>
-          <tr>
-            <td><strong>운영대행사</strong></td>
-            <td>클라이언트별 수동 리포트 작성</td>
-            <td>앱 검색만으로 리포트급 분석 자동 생성 + 슬랙 발송</td>
-          </tr>
+          <tr><td><strong>앱 광고주</strong><br><span style="font-size:12px;color:var(--text-muted)">게임사, 커머스, 핀테크</span></td><td>MI에서 DAU 확인 후 "그래서 뭘?" 막막</td><td>포지셔닝 + 이슈 → 액션까지 원스톱</td></tr>
+          <tr><td><strong>운영대행사</strong></td><td>클라이언트별 리포트 수동 작성에 반나절</td><td>30초 분석 + 슬랙 자동 발송</td></tr>
         </tbody>
       </table>
     </div>
   </div>
   <div class="card">
     <h3>신규 타겟 <span style="color:var(--green);font-size:14px;font-weight:500;margin-left:8px;">시장 확장</span></h3>
+    <p>MI를 안 쓰더라도 <strong>앱 시장 포지션을 빠르게 파악</strong>해야 하는 사람들.</p>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>대상</th><th>진입 포인트</th></tr>
-        </thead>
+        <thead><tr><th>대상</th><th>진입 포인트</th></tr></thead>
         <tbody>
-          <tr><td><strong>신규 앱 출시 준비 중인 팀</strong></td><td>경쟁사 맵으로 시장 진입 전략 수립</td></tr>
-          <tr><td><strong>마케터/PM</strong></td><td>캠페인 전후 DAU 변화 + 리뷰 감성 변화 연결</td></tr>
-          <tr><td><strong>투자사/컨설턴트</strong></td><td>앱 시장 포지션 빠른 진단</td></tr>
+          <tr><td><strong>신규 앱 출시팀</strong></td><td>"우리가 들어갈 시장에 누가 있고, 어디가 빈틈인지" 경쟁사 맵으로 확인</td></tr>
+          <tr><td><strong>마케터/PM</strong></td><td>캠페인 전후 DAU + 리뷰 감성 변화를 한 화면에서 연결</td></tr>
+          <tr><td><strong>투자사/컨설턴트</strong></td><td>앱 하나 검색으로 30초 만에 시장 포지션 진단</td></tr>
         </tbody>
       </table>
     </div>
@@ -759,32 +757,16 @@
     <h2 class="section-title">데이터 소스</h2>
   </div>
   <div class="card">
+    <p>기존 인프라만으로 즉시 구축 가능 — <strong>추가 데이터 비용 0원</strong></p>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>소스</th><th>데이터</th><th>비용</th></tr>
-        </thead>
+        <thead><tr><th>소스</th><th>데이터</th><th>비용</th></tr></thead>
         <tbody>
-          <tr>
-            <td><strong>MobileIndex API</strong></td>
-            <td>DAU, 다운로드, 평점, 점유율, 인구통계, 이탈, 리텐션, 충성도</td>
-            <td><span style="color:var(--green)">기존 API 토큰 활용</span></td>
-          </tr>
-          <tr>
-            <td><strong>iTunes RSS</strong></td>
-            <td>App Store 리뷰 (무제한)</td>
-            <td><span style="color:var(--green)">무료</span></td>
-          </tr>
-          <tr>
-            <td><strong>Google Play Scraper</strong></td>
-            <td>Google Play 리뷰</td>
-            <td><span style="color:var(--green)">무료</span></td>
-          </tr>
+          <tr><td><strong>MobileIndex API</strong></td><td>DAU, 다운로드, 평점, 점유율, 인구통계, 이탈, 리텐션, 충성도</td><td><span style="color:var(--green)">기존 토큰</span></td></tr>
+          <tr><td><strong>iTunes RSS</strong></td><td>App Store 리뷰 (무제한)</td><td><span style="color:var(--green)">무료</span></td></tr>
+          <tr><td><strong>Google Play Scraper</strong></td><td>Google Play 리뷰</td><td><span style="color:var(--green)">무료</span></td></tr>
         </tbody>
       </table>
-    </div>
-    <div class="highlight">
-      모든 데이터 소스가 <strong>추가 비용 없이</strong> 활용 가능 — 즉시 서비스 구축 가능
     </div>
   </div>
 </section>
@@ -796,6 +778,7 @@
     <h2 class="section-title">해결하는 문제</h2>
   </div>
   <div class="card">
+    <p>앱 운영팀이 매일 부딪히는 질문들 — AppVant가 <strong>30초 안에</strong> 답합니다.</p>
     <div class="ps-grid">
       <div class="ps-item">
         <div class="ps-problem">"우리 앱이 시장에서 어디에 있지?"</div>
